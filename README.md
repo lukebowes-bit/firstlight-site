@@ -16,12 +16,7 @@ Branch: **main**, Folder: **/ (root)** → Save. First publish takes a minute or
 
 ## The support address
 
-`firstlightapp@gmail.com` is a **placeholder** — register that mailbox, or swap in
-whatever you'd rather use, before submitting:
-
-```bash
-grep -rl firstlightapp@gmail.com . --exclude-dir=.git | xargs sed -i '' 's/firstlightapp@gmail.com/YOUR@ADDRESS/g'
-```
+`first.light1234567@gmail.com`, shown on the privacy and support pages.
 
 ## Preview locally
 
