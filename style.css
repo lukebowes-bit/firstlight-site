@@ -1,0 +1,178 @@
+/* First Light — support site
+   Palette lifted from FirstLight/DesignSystem/Colors.swift so the pages read as
+   part of the app rather than a bolted-on legal afterthought. */
+
+@font-face {
+  font-family: 'Anton';
+  src: url('fonts/Anton-400.woff2') format('woff2');
+  font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-400.woff2') format('woff2');
+  font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-500.woff2') format('woff2');
+  font-weight: 500; font-display: swap;
+}
+
+:root {
+  --midnight:   #0F1729;
+  --deep-navy:  #1A2744;
+  --dusk-blue:  #2A4A7F;
+  --amber:      #FF8C42;
+  --golden:     #FFB347;
+  --dawn-white: #F5F0EB;
+  --mist:       #8DABC4;
+  --measure: 40rem;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(60rem 40rem at 50% 118%, rgba(255, 140, 66, 0.22), transparent 70%),
+    linear-gradient(180deg, var(--midnight) 0%, var(--midnight) 42%, var(--deep-navy) 78%, var(--dusk-blue) 100%);
+  background-attachment: fixed;
+  color: var(--dawn-white);
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+/* Masthead ---------------------------------------------------------------- */
+
+.masthead { margin-bottom: 3.5rem; }
+
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dawn-white);
+  text-decoration: none;
+}
+.wordmark .sun {
+  width: 0.62rem; height: 0.62rem;
+  border-radius: 50%;
+  background: var(--golden);
+  box-shadow: 0 0 0.9rem rgba(255, 179, 71, 0.85);
+}
+.wordmark:hover { color: var(--golden); }
+
+/* Type -------------------------------------------------------------------- */
+
+h1 {
+  font-family: 'Anton', Impact, sans-serif;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 8vw, 3.4rem);
+  line-height: 1.04;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  margin: 0 0 0.6rem;
+}
+h1 .accent { color: var(--golden); display: block; }
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.22rem;
+  line-height: 1.35;
+  margin: 3rem 0 0.75rem;
+  color: var(--dawn-white);
+}
+
+.standfirst {
+  color: var(--mist);
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+}
+
+.updated {
+  color: var(--mist);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 2.5rem;
+}
+
+p { margin: 0 0 1.1rem; }
+
+a { color: var(--amber); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { color: var(--golden); }
+
+ul { padding-left: 1.15rem; margin: 0 0 1.1rem; }
+li { margin-bottom: 0.55rem; }
+li::marker { color: var(--amber); }
+
+strong { font-weight: 500; color: var(--dawn-white); }
+
+/* The one claim worth pulling out of the prose ---------------------------- */
+
+.pull {
+  border-left: 2px solid var(--amber);
+  padding: 0.15rem 0 0.15rem 1.15rem;
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--dawn-white);
+}
+
+/* Cards used by the landing page and the FAQ ------------------------------ */
+
+.card {
+  background: rgba(26, 39, 68, 0.55);
+  border: 1px solid rgba(141, 171, 196, 0.16);
+  border-radius: 0.85rem;
+  padding: 1.3rem 1.4rem;
+  margin-bottom: 0.9rem;
+}
+.card h2 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+.card p:last-child { margin-bottom: 0; }
+.card .lede { color: var(--mist); }
+
+.contact {
+  background: linear-gradient(135deg, rgba(255, 140, 66, 0.16), rgba(255, 179, 71, 0.06));
+  border-color: rgba(255, 140, 66, 0.35);
+}
+.contact .email {
+  font-size: 1.15rem;
+  font-weight: 500;
+  word-break: break-all;
+}
+
+/* Footer ------------------------------------------------------------------ */
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(141, 171, 196, 0.16);
+  color: var(--mist);
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  align-items: baseline;
+}
+footer .spacer { flex: 1; }
+
+@media (max-width: 30rem) {
+  body { font-size: 16px; }
+  .wrap { padding: 2.25rem 1.25rem 3.5rem; }
+}
