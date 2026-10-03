@@ -26,9 +26,11 @@ python3 -m http.server 8000   # then open http://localhost:8000
 
 ## Keeping it honest
 
-The privacy page claims the app makes no network requests, has no analytics and
-no accounts. That was verified against the source on 2026-09-21 (no `URLSession`,
-no CloudKit, no third-party SDKs). **If that ever changes, update the page in the
+The privacy page claims the app has no analytics, no accounts and no server of
+its own, and that its only network connection is to Apple's App Store for the
+free week and the one-time unlock (StoreKit 2, added 2026-10-02). The rest was
+verified against the source on 2026-09-21 (no `URLSession`, no CloudKit, no
+third-party SDKs). **If that ever changes, update the page in the
 same commit** — an inaccurate privacy policy is a review rejection and a legal
 problem, in that order.
 
